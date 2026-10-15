@@ -48,7 +48,7 @@ function ProductDetails() {
           <p className="product-detail-note">
             Each piece is made by hand by Aparna in Mumbai. Send us a message to ask about this piece.
           </p>
-          <Button asChild size="lg" className="product-detail-enquiry">
+          <Button asChild size="lg" variant="secondary" className="product-detail-enquiry">
             <a href={productEnquiry(product.name)} target="_blank" rel="noreferrer">
               Ask about this piece on WhatsApp <ArrowUpRight size={16} />
             </a>
