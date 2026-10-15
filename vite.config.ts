@@ -7,7 +7,20 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 const basePath = (process.env.VITE_BASE_PATH ?? "/").replace(/\/$/, "");
-const staticRoutes = ["/", "/collection", "/our-story", "/custom-orders", "/contact"];
+// Keep product paths in sync with the slugs in src/lib/business.ts.
+const staticRoutes = [
+  "/",
+  "/collection",
+  "/our-story",
+  "/custom-orders",
+  "/contact",
+  "/products/granny-square-handbag",
+  "/products/sunflower-bouquet",
+  "/products/crochet-bow-charms",
+  "/products/pink-crochet-handbag",
+  "/products/crochet-bow-keychain",
+  "/products/sunflower-daisy-bouquet",
+];
 
 export default defineConfig({
   // GitHub Pages serves project sites below /<repository>/.

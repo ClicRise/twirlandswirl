@@ -12,11 +12,11 @@ export const instagramDM = 'https://www.instagram.com/direct/t/17844281517048048
 export const whatsapp = (message = 'Hello, I would like to know more about Twirl and Swirl.') => `https://wa.me/919084666012?text=${encodeURIComponent(message)}`;
 export const productEnquiry = (name: string) => whatsapp(`Hello, I would like to know the price of ${name}.`);
 export const products = [
- { name: 'Granny Square Handbag', category: 'Bags', image: images.grannyBag, price: 1299, tag: 'EVERYDAY FAVOURITE' },
- { name: 'Sunflower Bouquet', category: 'Flowers', image: images.bouquet, price: 899, tag: 'A LITTLE SUNSHINE' },
- { name: 'Crochet Bow Charms', category: 'Accessories', image: images.bows, price: 199, tag: '' },
- { name: 'Pink Crochet Handbag', category: 'Bags', image: images.pinkBag, price: 1199, tag: 'PRETTY IN PINK' },
- { name: 'Crochet Bow Keychain', category: 'Accessories', image: images.keychain, price: 249, tag: '' },
- { name: 'Sunflower & Daisy Bouquet', category: 'Flowers', image: images.bouquetLarge, price: 1499, tag: 'MADE TO GIFT' },
+ { slug: 'granny-square-handbag', name: 'Granny Square Handbag', category: 'Bags', image: images.grannyBag, price: 1299, tag: 'EVERYDAY FAVOURITE', description: 'A classic granny-square crochet handbag, handmade by Aparna with a playful black-and-white look.' },
+ { slug: 'sunflower-bouquet', name: 'Sunflower Bouquet', category: 'Flowers', image: images.bouquet, price: 899, tag: 'A LITTLE SUNSHINE', description: 'A handmade crochet sunflower bouquet that brings a cheerful pop of colour to a room or a thoughtful gift.' },
+ { slug: 'crochet-bow-charms', name: 'Crochet Bow Charms', category: 'Accessories', image: images.bows, price: 199, tag: '', description: 'Small crochet bow charms add a playful handmade accent to accessories or make a sweet little gift.' },
+ { slug: 'pink-crochet-handbag', name: 'Pink Crochet Handbag', category: 'Bags', image: images.pinkBag, price: 1199, tag: 'PRETTY IN PINK', description: 'A handmade pink crochet handbag with a soft, colourful look for everyday outings.' },
+ { slug: 'crochet-bow-keychain', name: 'Crochet Bow Keychain', category: 'Accessories', image: images.keychain, price: 249, tag: '', description: 'A little crochet bow on a keychain, bringing a handmade touch to your keys or bag.' },
+ { slug: 'sunflower-daisy-bouquet', name: 'Sunflower & Daisy Bouquet', category: 'Flowers', image: images.bouquetLarge, price: 1499, tag: 'MADE TO GIFT', description: 'A handmade crochet arrangement of sunflowers and daisies, made to brighten a space or someone’s day.' },
 ];
 export function pageHead(title: string, description: string) { return { meta: [{ title: `${title} | Twirl and Swirl` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} | Twirl and Swirl` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }; }
