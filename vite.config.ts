@@ -6,6 +6,9 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const basePath = (process.env.VITE_BASE_PATH ?? "/").replace(/\/$/, "");
+const staticRoutes = ["/", "/collection", "/our-story", "/custom-orders", "/contact"];
+
 export default defineConfig({
   // GitHub Pages serves project sites below /<repository>/.
   vite: {
@@ -15,14 +18,21 @@ export default defineConfig({
     // GitHub Pages cannot run the Nitro server, so generate each route as static HTML.
     prerender: {
       enabled: true,
-      crawlLinks: true,
+      // Prerender the prefixed URLs used by GitHub Pages, then write each page
+      // at the matching path inside the published artifact.
+      autoStaticPathsDiscovery: false,
+      crawlLinks: false,
       failOnError: true,
     },
+    pages: staticRoutes.map((route) => ({
+      path: `${basePath}${route}` || "/",
+      prerender: {
+        enabled: true,
+        outputPath: route === "/" ? "/index.html" : `${route}/index.html`,
+      },
+    })),
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-  },
-  nitro: {
-    preset: "static",
   },
 });
