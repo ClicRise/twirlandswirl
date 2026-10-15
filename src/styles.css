@@ -40,3 +40,4 @@
 @media(max-width:700px){.product-detail{grid-template-columns:1fr;gap:30px;padding-block:40px}.product-detail-photo{aspect-ratio:1/1}.product-detail-copy h1{font-size:43px}.product-detail-back{margin-bottom:26px}.product-detail-enquiry{width:100%}.product-details-link{font-size:10px}}
 .product-detail.section{padding-bottom:48px}.recommended-products.section{padding-top:28px}
 .page-intro .single-line-intro{width:min(1240px,100%)}.page-intro h1.single-line-title{white-space:nowrap;font-size:clamp(20px,7.3vw,58px)}
+.product-card h3{min-height:2.4em;line-height:1.2}
